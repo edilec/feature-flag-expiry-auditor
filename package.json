@@ -1,13 +1,16 @@
 {
   "name": "feature-flag-expiry-auditor",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Find feature flags past their planned removal date and owner.",
   "type": "module",
   "engines": {
     "node": ">=22"
   },
+  "bin": { "feature-flag-expiry-auditor": "bin/feature-flag-expiry-auditor.mjs" },
   "scripts": {
-    "test": "node --test"
+    "lint": "node --check src/index.mjs && node --check src/cli.mjs && node --check src/json-keys.mjs && node --check bin/feature-flag-expiry-auditor.mjs",
+    "test": "node --test",
+    "check": "npm run lint && npm test"
   },
   "license": "MIT",
   "repository": {
